@@ -268,7 +268,7 @@ if (%so_files) {
     $d_so_args = '';
 }
 
-open my $in, "|stap --skip-badvars --all-modules -x $pid -d '$exec_path' --ldd $d_so_args $stap_args -"
+open my $in, "|stap -v --skip-badvars --all-modules -x $pid -d '$exec_path' --ldd $d_so_args $stap_args -"
     or die "Cannot run stap: $!\n";
 
 print $in $stap_src;
